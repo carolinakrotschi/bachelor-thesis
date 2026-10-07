@@ -1,59 +1,59 @@
-# Schreib-Spickzettel für dieses Thesis-Projekt
+# Writing Cheat Sheet for this Thesis Project
 
-Dieser Spickzettel fasst die wichtigsten Befehle zusammen, die du in den Einzeldateien unter `chapters/`, `pages/` und `appendix/` fürs Schreiben brauchst.
+The most important commands for writing in the files under `chapters/`, `pages/` and `appendix/`.
 
-## 1. Kapitel und Abschnitte
+## 1. Chapters and sections
 
 ```tex
-\chapter{Einleitung}
+\chapter{Introduction}
 \section{Motivation}
-\subsection{Forschungsfrage}
+\subsection{Research question}
 ```
 
-- `\chapter{...}` erzeugt ein Kapitel.
-- `\section{...}` erzeugt einen Abschnitt.
-- `\subsection{...}` erzeugt einen Unterabschnitt.
+- `\chapter{...}` creates a chapter.
+- `\section{...}` creates a section.
+- `\subsection{...}` creates a subsection.
 
-Für Sonderseiten ohne Kapitelnummer wird oft verwendet:
+Special pages without a chapter number usually use:
 
 ```tex
 \chapter*{Abstract}
 \phantomsection\addcontentsline{toc}{chapter}{\protect Abstract}
 ```
 
-## 2. Platzhaltertext
+## 2. Placeholder text
 
 ```tex
 \bt
 ```
 
-- `\bt` ist in der Präambel als Kurzform für Blindtext definiert.
-- Nutze das nur als Platzhalter und lösche es später wieder.
+- `\bt` is defined in the preamble as a shortcut for filler text.
+- Use it only as a placeholder and delete it later.
 
-## 3. Wichtige Mathe-Kurzbefehle
+## 3. Math shortcuts
 
 ```tex
 $\N, \Z, \Q, \R, \C$
 ```
 
-- `\N` natürliche Zahlen
-- `\Z` ganze Zahlen
-- `\Q` rationale Zahlen
-- `\R` reelle Zahlen
-- `\C` komplexe Zahlen
+- `\N` natural numbers
+- `\Z` integers
+- `\Q` rational numbers
+- `\R` real numbers
+- `\C` complex numbers
 
-Weitere nützliche Kurzbefehle:
+More shortcuts:
 
 ```tex
 $\D x, \E^{x}, \I, \1$
 ```
 
-- `\D` aufrechtes Differential `d`
-- `\E` Eulersche Zahl `e`
-- `\I` imaginäre Einheit `i`
-- `\1` Eins-/Indikatorsymbol
+- `\D` upright differential `d`
+- `\E` Euler's number `e`
+- `\I` imaginary unit `i`
+- `\1` one / indicator symbol
 
-## 4. Vektoren und Operatoren
+## 4. Vectors and operators
 
 ```tex
 $\bs{x}$
@@ -61,21 +61,21 @@ $\diag(-,+,+,+)$
 $\arsinh(x)$
 ```
 
-- `\bs{...}` macht mathematische Symbole fett, z. B. für Vektoren.
-- `\diag(...)` setzt den Operator `diag` sauber.
-- `\arsinh(...)` setzt den Operator `arsinh` sauber.
+- `\bs{...}` makes math symbols bold, e.g. for vectors.
+- `\diag(...)` typesets the `diag` operator.
+- `\arsinh(...)` typesets the `arsinh` operator.
 
-## 5. Einheiten und Zahlen mit `siunitx`
+## 5. Units and numbers with `siunitx`
 
 ```tex
 \SI{1.23}{\meter}
 \SI{299792458}{\meter\per\second}
 ```
 
-- `\SI{zahl}{einheit}` ist die Standardform für physikalische Größen.
-- Einheiten wie `\meter`, `\second`, `\kilogram`, `\kelvin` kannst du direkt verwenden.
+- `\SI{number}{unit}` is the standard form for physical quantities.
+- Units such as `\meter`, `\second`, `\kilogram`, `\kelvin` can be used directly.
 
-Zusätzliche Einheiten, die im Projekt definiert sind:
+Additional units defined in this project:
 
 ```tex
 \SI{1}{\au}
@@ -84,20 +84,20 @@ Zusätzliche Einheiten, die im Projekt definiert sind:
 \SI{10}{\yr}
 ```
 
-- `\au` astronomische Einheit
-- `\ly` Lichtjahr
-- `\parsec` Parsec
-- `\yr` Jahr
+- `\au` astronomical unit
+- `\ly` light year
+- `\parsec` parsec
+- `\yr` year
 
-## 6. Formeln
+## 6. Equations
 
-Inline-Formel:
+Inline:
 
 ```tex
-Die Energie ist durch $E = mc^2$ gegeben.
+The energy is given by $E = mc^2$.
 ```
 
-Abgesetzte Formel:
+Displayed:
 
 ```tex
 \begin{align*}
@@ -106,55 +106,55 @@ Abgesetzte Formel:
 \end{align*}
 ```
 
-- Für mehrere ausgerichtete Gleichungen ist `align*` praktisch.
-- Mit `*` werden keine Gleichungsnummern gesetzt.
+- `align*` is handy for several aligned equations.
+- The `*` suppresses equation numbers.
 
-## 7. Bilder
+## 7. Figures
 
 ```tex
 \begin{figure}[!h]
     \centering
-    \includegraphics[width=0.7\linewidth]{figures/beispielbild.png}
-    \caption{Beispielabbildung.}
-    \label{fig:beispiel}
+    \includegraphics[width=0.7\linewidth]{figures/example.png}
+    \caption{Example figure.}
+    \label{fig:example}
 \end{figure}
 ```
 
-- Bilder liegen typischerweise im Ordner `figures/`.
-- Mit `\label{...}` kannst du später referenzieren.
+- Images go into the `figures/` folder.
+- `\label{...}` lets you reference the figure later.
 
-## 8. Verweise
+## 8. Cross-references
 
 ```tex
-Wie in Abbildung~\ref{fig:beispiel} gezeigt, ...
+As shown in Figure~\ref{fig:example}, ...
 ```
 
-- `\label{...}` setzt eine Marke.
-- `\ref{...}` verweist auf diese Marke.
+- `\label{...}` sets a marker.
+- `\ref{...}` refers to it.
 
-Sinnvolle Namensmuster:
+Useful naming patterns:
 
-- `fig:...` für Abbildungen
-- `sec:...` für Abschnitte
-- `eq:...` für Gleichungen
-- `tab:...` für Tabellen
+- `fig:...` for figures
+- `sec:...` for sections
+- `eq:...` for equations
+- `tab:...` for tables
 
-## 9. Zitate und Literatur
+## 9. Citations and bibliography
 
-Die Bibliographie wird über `biblatex` eingebunden. Typische Befehle sind:
+The bibliography is handled by `biblatex`. Typical command:
 
 ```tex
 \cite{key}
 ```
 
-Wenn du Literatur verwendest, brauchst du:
+To cite a source you need:
 
-- einen Eintrag in `sources/bib_thesis.bib`
-- den passenden Schlüssel in `\cite{...}`
+- an entry in `sources/bachelorarbeit.bib`
+- the matching key in `\cite{...}`
 
-## 10. Nützliche Projekt-Makros
+## 10. Project macros
 
-Diese Befehle werden vor allem auf Titelseiten genutzt:
+These are mainly used on the title pages:
 
 ```tex
 \getAuthor
@@ -164,31 +164,31 @@ Diese Befehle werden vor allem auf Titelseiten genutzt:
 \getSupervisorTwo
 ```
 
-- Diese Werte kommen aus `preamble_thesis.tex`.
-- Für normales Schreiben in Kapiteln brauchst du sie meist nicht.
+- The values are set in `preamble_thesis.tex`.
+- Normal chapter writing rarely needs them.
 
-## 11. Minimalbeispiel für ein Kapitel
+## 11. Minimal chapter example
 
 ```tex
-\chapter{Ein Beispielkapitel}
+\chapter{An Example Chapter}
 
-\section{Einführung}
-Hier steht dein Fließtext. Mathematische Mengen kannst du als $\R$ oder $\C$ schreiben.
+\section{Introduction}
+Your text goes here. Number sets can be written as $\R$ or $\C$.
 
-\section{Modell}
-Wir betrachten den Vektor $\bs{x}$ und die Metrik $\diag(-,+,+,+)$.
+\section{Model}
+Consider the vector $\bs{x}$ and the metric $\diag(-,+,+,+)$.
 
 \begin{align*}
     E &= mc^2
 \end{align*}
 
-Ein Messwert beträgt \SI{2.5}{\meter}.
+A measured value is \SI{2.5}{\meter}.
 ```
 
-## 12. Empfehlung fürs tägliche Schreiben
+## 12. Everyday writing tips
 
-- Nutze `\section` und `\subsection` für die Struktur.
-- Nutze `\bt` nur als vorübergehenden Platzhalter.
-- Nutze `\SI{...}{...}` konsequent für Einheiten.
-- Nutze `\label` und `\ref` direkt beim Schreiben, damit Verweise stabil bleiben.
-- Nutze die Kurzbefehle wie `\R`, `\C`, `\bs`, `\diag` für einheitliche Notation.
+- Use `\section` and `\subsection` for structure.
+- Use `\bt` only as a temporary placeholder.
+- Use `\SI{...}{...}` consistently for units.
+- Add `\label` and `\ref` while writing so references stay stable.
+- Use the shortcuts `\R`, `\C`, `\bs`, `\diag` for consistent notation.
