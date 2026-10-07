@@ -17,3 +17,6 @@ compilation/
 
 # OS files
 .DS_Store
+
+# Editors
+.vscode/
